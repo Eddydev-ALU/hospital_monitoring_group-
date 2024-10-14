@@ -1,16 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "Enter Device Name:"
+echo "Enter the device name:"
 read device_name
 
 logFile="heart_rate_log.txt"
 
-while true;
-do
-  Timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-  Heart_rate=$((RANDOM % 40 + 60))  # Random value between 60-100
-  echo "$Timestamp $device_name $Heart_rate" >> "$logFile"
+while true; do
+  timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+  heart_rate=$((RANDOM % 81 + 40))
+  echo "$timestamp $device_name $heart_rate" >> "$logFile"
   sleep 1
-done
+done &
 
-echo "Heart rate monitor running in the background. Process ID (PID): $!"
+echo "Heart rate monitor is running in the background. Process ID (PID): $!"
