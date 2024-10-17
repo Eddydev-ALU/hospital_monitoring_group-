@@ -12,9 +12,9 @@ else
 
 fi
 
-for eachFile in heart_rate_log_txt_*; do
+for eachFile in heart_rate_log.txt_*; do
 	mv "$eachFile" "$arcDir"
 
 done
 
-scp -r $archdir/ $userinfo@$host:/home/
+scp -r $arcDir/ $userinfo@$host:/home/
