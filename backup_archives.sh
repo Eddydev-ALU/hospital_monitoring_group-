@@ -1,20 +1,21 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-userinfo="03e282cfdac0"
-host="03e282cfdac0.7d5f7213.alu-cod.online"
+# Define sever variables
+REMOTE_USER="03e282cfdac0"
+REMOTE_HOST="03e282cfdac0.7d5f7213.alu-cod.online"
+REMOTE_PATH="/home"
+# Attention!! The three variables above are my intranet_sandbox parameters. You must replace them by yours!
 
-arcDir="archived_logs_group5"
+# Execute the backup using scp
+mkdir ./archived_logs_group5
+mv heart_rate_log.txt_* archived_logs_group5/
 
-if [ ! -d "$arcDir" ];then
-	mkdir "$arcDir"
+scp -r archived_logs_group5 "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
+
+# Check if the scp command was successful
+if [[ $? -eq 0 ]]; then
+    echo "Files Backed-up successfully!!"
+    echo "Your backup location: $REMOTE_PATH"
 else
-	echo "The INformation you are seeking arleady exists"
-
+    echo "Backup failed"
 fi
-
-for eachFile in heart_rate_log.txt_*; do
-	mv "$eachFile" "$arcDir"
-
-done
-
-scp -r $arcDir/ $userinfo@$host:/home/
