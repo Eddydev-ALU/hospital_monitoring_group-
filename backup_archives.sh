@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+userinfo="03e282cfdac0"
+host="03e282cfdac0.7d5f7213.alu-cod.online"
+
 arcDir="archived_logs_group5"
 
 if [ ! -d "$arcDir" ];then
@@ -13,3 +16,5 @@ for eachFile in heart_rate_log_txt_*; do
 	mv "$eachFile" "$arcDir"
 
 done
+
+scp -r $archdir/ $userinfo@$host:/home/
