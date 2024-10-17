@@ -31,6 +31,8 @@ The script will rename the log file with a timestamp.
 > Move the archived logs to a designated directory and back them up to a remote server:
 
 ./backup_archives.sh
+The script will create a backup in a different sandbox where a diffferent user can access the log
+
 
 ## 3. Team Meeting Report
 
