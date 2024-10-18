@@ -44,3 +44,4 @@ Date	            Location                  Members Present
 
 2024-10-17	     Online                    Emery, Nehemie, Tresor, Parfait, Eddy & Jean
 
+2024-10-16           On-Campus                 Emery, Tresor, Eddy, Nehemie
